@@ -1,0 +1,13 @@
+{
+  "name": "markdown-previewer",
+  "version": "1.0.0",
+  "description": "Markdown previewer for freeCodeCamp.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --watch",
+    "prod": "webpack -p"
+  },
+  "author": "Greg Wong",
+  "license": "ISC"
+}
