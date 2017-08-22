@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack -d --watch",
-    "prod": "webpack -p"
+    "prod": "npm run clean && webpack -p",
+    "clean": "rimraf ./dist/*"
   },
   "author": "Greg Wong",
   "license": "ISC",
   "devDependencies": {
+    "rimraf": "^2.6.1",
     "webpack": "^3.5.5"
   }
 }
