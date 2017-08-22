@@ -4,10 +4,12 @@
   "description": "Markdown previewer for freeCodeCamp.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --watch",
+    "dev": "webpack -d --watch",
     "prod": "webpack -p"
   },
   "author": "Greg Wong",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^3.5.5"
+  }
 }
