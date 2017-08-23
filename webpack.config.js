@@ -19,6 +19,13 @@ module.exports = {
             }
         ]
     },
+    devServer: {
+        contentBase: __dirname + '/dist',
+        compress: true,
+        port: 9000,
+        stats: 'errors-only',
+        open: true
+    },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Markdown Previewer',
