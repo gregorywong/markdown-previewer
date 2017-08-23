@@ -1,6 +1,14 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const webpack = require('webpack');
 
+var isProd = process.env.NODE_ENV === 'production';
+var cssDev = ['style-loader', 'css-loader', 'sass-loader'];
+var cssProd = ExtractTextPlugin.extract({
+    fallback: 'style-loader',
+    use: ['css-loader', 'sass-loader']
+});
+var cssConfig = isProd ? cssProd : cssDev;
 
 module.exports = {
     entry: './src/app.jsx',
@@ -12,10 +20,7 @@ module.exports = {
         rules: [
             {
                 test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: ['css-loader', 'sass-loader']
-                })
+                use: cssConfig
             },
             {
                 test: /\.jsx?$/,
@@ -29,7 +34,8 @@ module.exports = {
         compress: true,
         port: 9000,
         stats: 'errors-only',
-        open: true
+        open: true,
+        hot: true
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -42,6 +48,12 @@ module.exports = {
             */
             template: './src/index.ejs', // Load a custom template (ejs by default see the FAQ for details)
         }),
-        new ExtractTextPlugin("app.css")
+        new ExtractTextPlugin({
+            filename: "app.css",
+            disable: !isProd,
+            allChunks: true
+        }),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin()
     ]
 }
