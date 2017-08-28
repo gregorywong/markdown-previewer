@@ -20,8 +20,8 @@ export default class App extends React.Component {
     return (
       <div>
         <header className="text-center">
-          <h1>Markdown Previewer</h1>
-          <div className="m-2">
+          <h1 className="my-4">Markdown Previewer</h1>
+          <div className="mx-2 mb-5">
             <p>Type your markdown text on the left, and see it converted with formatting applied on the right!</p>
           </div>
         </header>
