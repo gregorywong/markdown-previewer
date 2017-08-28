@@ -29,11 +29,11 @@ export default class App extends React.Component {
           <div className="row">
 
             <div className="col-6">
-              <textarea onChange={e => this.updateText(e.target.value)} className="form-control w-100" name="" id="" rows="20" placeholder="Enter markdown text here">
+              <textarea onChange={e => this.updateText(e.target.value)} className="form-control w-100 input-pane" name="" id="" rows="20" placeholder="Enter markdown text here">
               </textarea>
             </div>
 
-            <div className="col-6 display-window">
+            <div className="col-6 output-pane">
               {displayText}
             </div>
 
