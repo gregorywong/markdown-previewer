@@ -33,7 +33,7 @@ export default class App extends React.Component {
               </textarea>
             </div>
 
-            <div className="col-6">
+            <div className="col-6 display-window">
               {displayText}
             </div>
 
