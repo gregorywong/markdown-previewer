@@ -1,6 +1,8 @@
 # markdown-previewer
 A Markdown previewer built using React, Bootstrap and marked.
 
+A working version can be found here: https://gregorywong.github.io/markdown-previewer/
+
 ## How to use the files?
 
 1. Clone this repo
